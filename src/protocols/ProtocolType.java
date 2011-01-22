@@ -1,5 +1,6 @@
 package protocols;
 
+import gw.fs.IFile;
 import gw.lang.parser.ISourceCodeTokenizer;
 import gw.lang.reflect.IMethodInfo;
 import gw.lang.reflect.IPropertyInfo;
@@ -9,9 +10,7 @@ import gw.lang.reflect.ITypeLoader;
 import gw.lang.reflect.TypeBase;
 import gw.lang.reflect.TypeSystem;
 import gw.lang.reflect.java.IJavaType;
-import gw.lang.reflect.module.IFile;
 import gw.util.GosuClassUtil;
-import gw.util.concurrent.LazyVar;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -224,7 +223,7 @@ public class ProtocolType extends TypeBase implements IProtocolType
   {
     if( _source instanceof IFile )
     {
-      return ((IFile)_source).getAbsolutePath();
+      return ((IFile)_source).toJavaFile().getAbsolutePath();
     }
     return getName() + ".proto";
   }

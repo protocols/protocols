@@ -1,15 +1,35 @@
-package gw.internal.gosu.protocol;
+package protocols;
 
+import com.sun.jndi.dns.DnsName;
 import gw.lang.parser.resources.ResourceKey;
-import gw.test.TestClass;
+import gw.lang.shell.Gosu;
+import junit.framework.TestCase;
+import protocols.ProtocolMessages;
+import protocols.ProtocolType;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /**
  */
-public class ProtocolParserTest extends TestClass
+public class ProtocolParserTest extends TestCase
 {
+  @Override
+  protected void setUp() throws Exception {
+    Gosu.initGosu(null, makeClasspathFromSystemClasspath());
+  }
+
+  private List<File> makeClasspathFromSystemClasspath() {
+    List<File> files = new ArrayList<File>();
+    for (String s : System.getProperty("java.class.path").split(File.pathSeparator)) {
+      File file = new File(s);
+      files.add(file);
+    }
+    return files;
+  }
+
   public void testMustStartWithPackage()
   {
     ProtocolType badType = new ProtocolType( "test.Test", "" );

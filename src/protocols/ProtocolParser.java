@@ -1,5 +1,6 @@
 package protocols;
 
+import gw.fs.IFile;
 import gw.lang.parser.GosuParserFactory;
 import gw.lang.parser.IExpression;
 import gw.lang.parser.IGosuParser;
@@ -13,7 +14,6 @@ import gw.lang.parser.statements.IUsesStatementList;
 import gw.lang.reflect.IType;
 import gw.lang.reflect.TypeSystem;
 import gw.lang.reflect.java.IJavaType;
-import gw.lang.reflect.module.IFile;
 import gw.util.GosuExceptionUtil;
 import gw.util.Pair;
 import gw.util.StreamUtil;
@@ -41,7 +41,7 @@ public class ProtocolParser
     {
       _gosuParser = GosuParserFactory.createParser( (String) src );
     }
-    else if( src instanceof IFile )
+    else if( src instanceof IFile)
     {
       try
       {

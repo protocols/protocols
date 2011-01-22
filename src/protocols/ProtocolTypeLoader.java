@@ -1,11 +1,11 @@
 package protocols;
 
+import gw.fs.IFile;
 import gw.lang.reflect.IType;
 import gw.lang.reflect.ITypeLoader;
 import gw.lang.reflect.TypeLoaderBase;
 import gw.lang.reflect.TypeSystem;
 import gw.lang.reflect.java.IJavaClassInfo;
-import gw.lang.reflect.module.IFile;
 import gw.lang.reflect.module.IModule;
 import gw.util.Pair;
 import gw.util.concurrent.LazyVar;
