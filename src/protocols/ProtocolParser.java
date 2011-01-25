@@ -321,7 +321,7 @@ public class ProtocolParser
 
   private void log( String s )
   {
-    System.out.println( s );
+    //System.out.println( s );
   }
 
   public ISourceCodeTokenizer getTokenizer()
